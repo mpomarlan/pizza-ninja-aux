@@ -1,0 +1,24 @@
+<!-- <?xml version="1.0"?> -->
+<package>
+  <name>pizza-ninja-aux</name>
+  <version>0.1.0</version>
+  <description>.
+  </description>
+
+  <maintainer email="blandc@cs.uni-bremen.de">Mihai Pomarlan</maintainer>
+  <author email="blandc@cs.uni-bremen.de">Mihai Pomarlan</author>
+
+  <license>BSD</license>
+
+  <url type="bugtracker">https://github.com/mpomarlan/pizza-ninja-aux/issues</url>
+  <url type="repository">https://github.com/mpomarlan/pizza-ninja-aux</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <!--<run_depend>meshproc_msgs</run_depend>-->
+  <!--<run_depend>meshproc_p2m</run_depend>-->
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
