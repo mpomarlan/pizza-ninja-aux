@@ -1,8 +1,8 @@
 <launch>
 
   <node pkg="pizzaninja-controllers" type="pr2_seggoalcontroller" name="pr2_point2point" output="screen">
-    <rosparam param="goal_topic">"goal"</rosparam>
-    <rosparam param="finished_topic">"finished"</rosparam>
+    <remap from="~goal" to="/pr2_point2point/goal" />
+    <remap from="~finished" to="/pr2_point2point/finished" />
     <rosparam param="joint_names"
       file="$(find giskard_examples)/config/pr2_left_upper_body.yaml" />
     <param name="controller_description" 
@@ -11,8 +11,8 @@
   </node>
  
   <node pkg="pizzaninja-controllers" type="pr2_seggoalcontroller" name="pr2_segfollower" output="screen">
-    <rosparam param="goal_topic">"goal"</rosparam>
-    <rosparam param="finished_topic">"finished"</rosparam>
+    <remap from="~goal" to="/pr2_segfollower/goal" />
+    <remap from="~finished" to="/pr2_segfollower/finished" />
     <rosparam param="joint_names"
       file="$(find giskard_examples)/config/pr2_left_upper_body.yaml" />
     <param name="controller_description" 
