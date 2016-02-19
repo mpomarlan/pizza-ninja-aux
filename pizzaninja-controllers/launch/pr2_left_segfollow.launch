@@ -1,18 +1,22 @@
 <launch>
 
-  <node pkg="pizzaninja-controllers" type="pr2_segfollower" name="pr2_segfollower" output="screen">
-    <rosparam param="joint_names"
-      file="$(find giskard_examples)/config/pr2_left_upper_body.yaml" />
-    <param name="controller_description" 
-      textfile="$(find pizzaninja-controllers)/controller_specs/pr2_seg_follow_control.yaml" />
-    <remap from="~joint_states" to="/joint_states" />
-  </node>
- 
-  <node pkg="pizzaninja-controllers" type="pr2_point2point" name="pr2_point2point" output="screen">
+  <node pkg="pizzaninja-controllers" type="pr2_seggoalcontroller" name="pr2_point2point" output="screen">
+    <rosparam param="goal_topic">"goal"</rosparam>
+    <rosparam param="finished_topic">"finished"</rosparam>
     <rosparam param="joint_names"
       file="$(find giskard_examples)/config/pr2_left_upper_body.yaml" />
     <param name="controller_description" 
       textfile="$(find pizzaninja-controllers)/controller_specs/pr2_point2point_control.yaml" />
+    <remap from="~joint_states" to="/joint_states" />
+  </node>
+ 
+  <node pkg="pizzaninja-controllers" type="pr2_seggoalcontroller" name="pr2_segfollower" output="screen">
+    <rosparam param="goal_topic">"goal"</rosparam>
+    <rosparam param="finished_topic">"finished"</rosparam>
+    <rosparam param="joint_names"
+      file="$(find giskard_examples)/config/pr2_left_upper_body.yaml" />
+    <param name="controller_description" 
+      textfile="$(find pizzaninja-controllers)/controller_specs/pr2_seg_follow_control.yaml" />
     <remap from="~joint_states" to="/joint_states" />
   </node>
  

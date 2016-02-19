@@ -12,6 +12,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <depend>yaml-cpp</depend>
   <depend>giskard</depend>
+  <depend>giskard_examples</depend>
   <depend>roscpp</depend>
   <depend>roslib</depend>
   <depend>geometry_msgs</depend>

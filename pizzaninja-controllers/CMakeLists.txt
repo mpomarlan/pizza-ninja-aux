@@ -6,6 +6,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp 
   roslib 
   giskard 
+  giskard_examples
   tf2_ros
   tf2_geometry_msgs
   geometry_msgs
@@ -31,11 +32,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
   ${YAML_CPP_INCLUDE_DIRS})
 
-add_executable(pr2_point2point src/${PROJECT_NAME}/pr2_point2point.cpp)
-target_link_libraries(pr2_point2point
-  ${catkin_LIBRARIES} yaml-cpp)
-
-add_executable(pr2_segfollower src/${PROJECT_NAME}/pr2_segfollower.cpp)
-target_link_libraries(pr2_segfollower
+add_executable(pr2_seggoalcontroller src/${PROJECT_NAME}/pr2_seggoalcontroller.cpp)
+target_link_libraries(pr2_seggoalcontroller
   ${catkin_LIBRARIES} yaml-cpp)
 
